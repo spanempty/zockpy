@@ -1,0 +1,11 @@
+title: Brute Force Attack
+logsource:
+  category: auth
+  product: web_server
+detection:
+  threshold: 10
+  keywords:
+    - "failed login"
+    - "authentication failure"
+  severity: high
+  owasp: A07

@@ -1,0 +1,12 @@
+title: Cross-Site Scripting Attack
+logsource:
+  category: web
+  product: web_server
+detection:
+  keywords:
+    - "<script>"
+    - "javascript:"
+    - "onload="
+    - "alert("
+  severity: medium
+  owasp: A03

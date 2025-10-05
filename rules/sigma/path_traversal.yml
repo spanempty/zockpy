@@ -1,0 +1,12 @@
+title: Path Traversal Attack
+logsource:
+  category: web
+  product: web_server
+detection:
+  keywords:
+    - "../"
+    - "..\\"
+    - "/etc/passwd"
+    - "c:\\windows"
+  severity: high
+  owasp: A01

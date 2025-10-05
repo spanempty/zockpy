@@ -1,0 +1,13 @@
+title: Command Injection Attack
+logsource:
+  category: web
+  product: web_server
+detection:
+  keywords:
+    - "; rm -rf"
+    - "| sh"
+    - "& cat"
+    - "`"
+    - "$()"
+  severity: critical
+  owasp: A03

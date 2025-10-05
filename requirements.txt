@@ -1,0 +1,5 @@
+Flask
+psutil
+requests
+pyyaml
+yara-python

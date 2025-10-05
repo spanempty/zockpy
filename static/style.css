@@ -1,0 +1,144 @@
+.proc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+.proc-table th,
+.proc-table td {
+  border-bottom: 1px solid #eee;
+  padding: 4px 8px;
+  text-align: left;
+}
+.proc-table th {
+  background: #f8f8f8;
+  font-weight: bold;
+}
+.header {
+  background: #222;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+}
+.info-list li {
+  padding: 4px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.metric-bar {
+  margin-bottom: 16px;
+}
+.bar-bg {
+  background: #eee;
+  border-radius: 4px;
+  height: 18px;
+  width: 80%;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.bar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s;
+}
+.alert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 15px;
+}
+.alert-list li {
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.alert-info {
+  color: #3498db;
+}
+.alert-warning {
+  color: #f1c40f;
+}
+.alert-critical {
+  color: #e74c3c;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+/* Responsive grid for cards */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 24px;
+  margin: 30px auto;
+  width: 95%;
+  align-items: stretch;
+}
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-height: 180px;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow: hidden;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-height: 180px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; */
+}
+
+.top-processes {
+  margin: 0 45px;
+  height: auto !important;
+  min-height: 180px;
+}
+.security-scan {
+  overflow-y: auto;
+  max-height: 340px;
+}
+.test-attack {
+  overflow-y: auto;
+  max-height: 340px;
+}
+
+pre {
+  background: #f8f8f8;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  overflow-x: auto;
+}
+form {
+  margin-bottom: 10px;
+}
+input[type="text"] {
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+button {
+  padding: 6px 14px;
+  border-radius: 4px;
+  border: none;
+  background: #222;
+  color: #fff;
+  cursor: pointer;
+}
+button:hover {
+  background: #444;
+}

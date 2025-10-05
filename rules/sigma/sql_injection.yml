@@ -1,0 +1,13 @@
+title: SQL Injection Attack
+logsource:
+  category: web
+  product: web_server
+detection:
+  keywords:
+    - "' OR '1'='1"
+    - "UNION SELECT"
+    - "DROP TABLE"
+    - "1=1--"
+    - "xp_cmdshell"
+  severity: high
+  owasp: A03

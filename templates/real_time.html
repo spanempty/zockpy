@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ZOCK ADVANCED SECURITY MONITOR - Real Time</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <h1>
+        🛡️ ZOCK ADVANCED SECURITY MONITOR
+        <span style="color: #2ecc71">(Real Time)</span>
+      </h1>
+      <nav style="margin-top: 10px">
+        <a
+          href="/"
+          style="
+            margin-right: 18px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+          "
+          >Dashboard</a
+        >
+        <a
+          href="/real-time"
+          style="color: #27ae60; text-decoration: none; font-weight: bold"
+          >Real-Time</a
+        >
+      </nav>
+    </div>
+    <div class="container">
+      <div class="card">
+        <h2>System Info</h2>
+        <ul id="systemInfoList" class="info-list"></ul>
+      </div>
+      <div class="card">
+        <h2>System Metrics</h2>
+        <div class="metric-bar">
+          <label>CPU Usage:</label>
+          <div class="bar-bg"><div id="cpuBar" class="bar"></div></div>
+          <span id="cpuPercent"></span>
+        </div>
+        <div class="metric-bar">
+          <label>Memory Usage:</label>
+          <div class="bar-bg"><div id="memBar" class="bar"></div></div>
+          <span id="memPercent"></span>
+        </div>
+        <div class="metric-bar">
+          <label>Disk Usage:</label>
+          <div class="bar-bg"><div id="diskBar" class="bar"></div></div>
+          <span id="diskPercent"></span>
+        </div>
+      </div>
+      <div class="card security-scan">
+        <h2>Security Scan</h2>
+        <ul id="securityScanList" class="alert-list"></ul>
+        <div id="processCount" style="font-size: 13px; color: #555"></div>
+      </div>
+      <div class="card test-attack">
+        <h2>Test Attack</h2>
+        <form id="attackForm">
+          <label for="attackUrl">Target URL:</label>
+          <input
+            type="text"
+            id="attackUrl"
+            name="attackUrl"
+            style="width: 50%"
+            required
+            placeholder="e.g. http://localhost:5000"
+          />
+          <br /><br />
+          <label for="attackPayload">Attack Payload:</label>
+          <input
+            type="text"
+            id="attackPayload"
+            name="attackPayload"
+            style="width: 60%"
+            required
+            placeholder="e.g. ' OR '1'='1"
+          />
+          <button type="submit">Test</button>
+        </form>
+        <div style="margin-bottom: 8px; font-size: 13px; color: #555">
+          <strong>Examples:</strong>
+          <ul style="margin: 4px 0 0 18px">
+            <li>' OR '1'='1 (SQL Injection)</li>
+            <li>&lt;script&gt;alert(1)&lt;/script&gt; (XSS)</li>
+            <li>; rm -rf / (Command Injection)</li>
+            <li>../etc/passwd (Path Traversal)</li>
+          </ul>
+        </div>
+        <pre id="attackResult"></pre>
+      </div>
+    </div>
+    <div class="card top-processes">
+      <h2>Top Processes</h2>
+      <div>
+        <h3 style="margin-bottom: 4px">CPU Usage</h3>
+        <table class="proc-table" id="cpuProcTable">
+          <thead>
+            <tr>
+              <th>PID</th>
+              <th>Name</th>
+              <th>CPU %</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div style="margin-top: 16px">
+        <h3 style="margin-bottom: 4px">Memory Usage</h3>
+        <table class="proc-table" id="memProcTable">
+          <thead>
+            <tr>
+              <th>PID</th>
+              <th>Name</th>
+              <th>Memory %</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="{{ url_for('static', filename='real_time.js') }}"></script>
+  </body>
+</html>
